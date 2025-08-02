@@ -5,7 +5,7 @@ dotenv.config();
 // Validate required environment variables
 const requiredEnvVars = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN', 'SLACK_SIGNING_SECRET'];
 for (const envVar of requiredEnvVars) {
-  if (!process.env[envVar]) {
+  if (!process.env[envVar] || process.env[envVar]!.trim() === '') {
     console.error(`Missing required environment variable: ${envVar}`);
     process.exit(1);
   }
