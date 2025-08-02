@@ -20,7 +20,7 @@ const app = new App({
   socketMode: true,
   appToken: process.env.SLACK_APP_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
-  logLevel: LogLevel.DEBUG,
+  logLevel: LogLevel.INFO,
 });
 
 /** Register Listeners */
