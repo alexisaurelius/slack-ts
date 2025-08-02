@@ -2,6 +2,15 @@
 import * as dotenv from 'dotenv';
 dotenv.config();
 
+// Validate required environment variables
+const requiredEnvVars = ['SLACK_BOT_TOKEN', 'SLACK_APP_TOKEN'];
+for (const envVar of requiredEnvVars) {
+  if (!process.env[envVar]) {
+    console.error(`Missing required environment variable: ${envVar}`);
+    process.exit(1);
+  }
+}
+
 import { App, LogLevel } from '@slack/bolt';
 import registerListeners from './listeners';
 
