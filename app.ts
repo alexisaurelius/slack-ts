@@ -1,8 +1,9 @@
+// Load environment variables first, before any other imports
+import * as dotenv from 'dotenv';
+dotenv.config();
+
 import { App, LogLevel } from '@slack/bolt';
 import registerListeners from './listeners';
-
-// Load environment variables
-require('dotenv').config();
 
 /** Initialization */
 const app = new App({
